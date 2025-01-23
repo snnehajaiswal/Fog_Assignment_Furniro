@@ -13,7 +13,7 @@ const ProductCard = ({ product, onEdit, onDelete }) => {
       {/* Image Container */}
       <div className="relative overflow-hidden">
         <img 
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmTlhFbdfuGz8Gz93VLiCDbHdrY5sRW3qMdg&s" 
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt_86-eh-UzxcofHvXUfJmNA4yWbfvusc4qg&s" 
           alt={product.name} 
           className="w-full h-32 sm:h-36 md:h-40 object-cover transition-transform duration-500 group-hover:scale-110"
         />
@@ -51,13 +51,13 @@ const ProductCard = ({ product, onEdit, onDelete }) => {
         `}>
           <button 
             onClick={() => onEdit(product)}
-            className="p-1.5 bg-blue-500 text-white rounded-full hover:bg-blue-600 transform hover:scale-110 transition-all duration-300"
+            className="p-1.5 bg-green-900 text-white rounded-full hover:bg-blue-600 transform hover:scale-110 transition-all duration-300"
           >
             <RiEditLine size={16} />
           </button>
           <button 
             onClick={() => onDelete(product._id)}
-            className="p-1.5 bg-red-500 text-white rounded-full hover:bg-red-600 transform hover:scale-110 transition-all duration-300"
+            className="p-1.5 bg-green-900 text-white rounded-full hover:bg-red-600 transform hover:scale-110 transition-all duration-300"
           >
             <RiDeleteBin6Line size={16} />
           </button>
@@ -72,12 +72,12 @@ const ProductCard = ({ product, onEdit, onDelete }) => {
         <p className="text-xs text-gray-600 truncate">{product.brand}</p>
         <p className="text-xs text-gray-500 truncate">{product.category}</p>
         <div className="mt-1.5 flex items-center justify-between">
-          <p className="text-sm sm:text-base font-bold text-[#B88E2F]">
+          <p className="text-sm sm:text-base font-bold text-[#105b6c]">
             ${product.price}
           </p>
           <div className="flex items-center">
             {[...Array(5)].map((_, index) => (
-              <span key={index} className="text-yellow-400 text-xs">★</span>
+              <span key={index} className="text-[#105b6c] text-xs">★</span>
             ))}
           </div>
         </div>
