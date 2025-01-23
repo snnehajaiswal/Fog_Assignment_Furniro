@@ -31,7 +31,7 @@ const Products = () => {
         ...(filters.sort && { sort: filters.sort })
       });
 
-      const response = await fetch(`http://localhost:8000/api/v1/products?${queryParams}`);
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/v1/products?${queryParams}`);
       if (!response.ok) {
         throw new Error('Failed to fetch products');
       }
@@ -66,7 +66,7 @@ const Products = () => {
 
   const handleAddProduct = async (productData) => {
     try {
-      const response = await fetch('http://localhost:8000/api/v1/products', {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/v1/products`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -84,7 +84,7 @@ const Products = () => {
 
   const handleUpdateProduct = async (productData) => {
     try {
-      const response = await fetch(`http://localhost:8000/api/v1/products/${productData._id}`, {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/v1/products/${productData._id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -103,7 +103,7 @@ const Products = () => {
   const handleDeleteProduct = async (productId) => {
     if (window.confirm('Are you sure you want to delete this product?')) {
       try {
-        const response = await fetch(`http://localhost:8000/api/v1/products/${productId}`, {
+        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/v1/products/${productId}`, {
           method: 'DELETE',
         });
         
@@ -118,7 +118,7 @@ const Products = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-     <div className='bg-[url(./front.jpg)] bg-left bg-cover bg-no-repeat w-full h-80 relative'>
+     <div className='bg-[url(/public/front.jpg)] bg-left bg-cover bg-no-repeat w-full h-80 relative'>
         <div className='absolute top-0 left-0 right-0 bottom-0 bg-white bg-opacity-55'></div>
         <div className='absolute top-0 left-0 right-0 bottom-0 flex-col text-black flex justify-center gap-2 items-center'>
           <span className='font-semibold text-4xl'>Shop</span>
